@@ -1,10 +1,10 @@
-LIB = periphery.a
-SRCS = src/gpio.c src/led.c src/pwm.c src/spi.c src/i2c.c src/mmio.c src/serial.c src/version.c
+LIB = serial.a
+SRCS = src/serial.c src/version.c
 
 SRCDIR = src
 OBJDIR = obj
 
-TEST_PROGRAMS = $(basename $(wildcard tests/*.c))
+TEST_PROGRAMS = $(basename $(wildcard tests/test_serial.c))
 
 ###########################################################################
 

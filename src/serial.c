@@ -23,16 +23,6 @@
 
 #include "serial.h"
 
-struct serial_handle {
-    int fd;
-    bool use_termios_timeout;
-
-    struct {
-        int c_errno;
-        char errmsg[96];
-    } error;
-};
-
 static int _serial_error(serial_t *serial, int code, int c_errno, const char *fmt, ...) {
     va_list ap;
 

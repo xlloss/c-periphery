@@ -15,6 +15,16 @@ extern "C" {
 #include <stddef.h>
 #include <stdbool.h>
 
+struct serial_handle {
+    int fd;
+    bool use_termios_timeout;
+
+    struct {
+        int c_errno;
+        char errmsg[96];
+    } error;
+};
+
 enum serial_error_code {
     SERIAL_ERROR_ARG            = -1, /* Invalid arguments */
     SERIAL_ERROR_OPEN           = -2, /* Opening serial port */
