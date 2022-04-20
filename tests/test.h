@@ -20,6 +20,17 @@
         assert(r); \
     } while(0)
 
+#define gpio_passert(str, c) \
+    do { \
+        int r = (c); \
+        if (r) \
+            printf("%s " STR_OK " \n", str); \
+        else \
+            printf("%s " STR_FAIL " \n", str); \
+        assert(r); \
+    } while(0)
+
+
 #define ptest() \
     printf("\nStarting test %s():%d\n", __func__, __LINE__)
 

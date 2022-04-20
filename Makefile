@@ -1,10 +1,10 @@
-LIB = serial.a
-SRCS = src/serial.c src/version.c
+LIB = gpiolib.a
+SRCS = src/gpio.c src/version.c
 
 SRCDIR = src
 OBJDIR = obj
 
-TEST_PROGRAMS = $(basename $(wildcard tests/test_serial.c))
+TEST_PROGRAMS = $(basename $(wildcard tests/kenxen_test_gpio_sysfs.c))
 
 ###########################################################################
 
