@@ -15,7 +15,7 @@
 #include <unistd.h>
 
 #include "../src/gpio.h"
-
+#define VER_INFO "DD002 ver1.0"
 #define GPIO(n) n
 #define GPIO_TEST_N 23 - 2
 #define TEST_LOOP 2
@@ -112,6 +112,9 @@ int main(int argc, char *argv[]) {
     unsigned int *input_pin_class;
     unsigned int *output_pin_class;
 
+    printf("======================================\n");
+    printf("=============  %s  =========\n", VER_INFO);
+    printf("======================================\n");
     for (j = 0; j < TEST_LOOP; j++) {
         for (i = 0; i < GPIO_TEST_N; i++) {
             if (!j) {
